@@ -18,7 +18,7 @@ static void LoadEmailConfiguration()
 {
     BccEmailAddress = AppSettingsHelper.GetAppSetting("BCC_EMAIL");
     SchedulerEmailAddress = AppSettingsHelper.GetAppSetting("SCHEDULER_EMAIL");
-    FromEmailAddress = AppSettingsHelper.GetAppSetting("FROM_EMAL");
+    FromEmailAddress = AppSettingsHelper.GetAppSetting("FROM_EMAIL");
 }
 
 static void LoadTopicExperts()
@@ -95,7 +95,7 @@ public static async Task<int> SendMail(ExpertRequest aExpertRequest)
 
     Email to = new Email(GetExpert(aExpertRequest.Topic,aExpertRequest.RequestedConversation));
 
-    string messageContent = $"Edi, can you scheudle a Skype for business call between the people on the to line tomorrow {aExpertRequest.RequestedDayHalf.ToString().ToLower()}?" 
+    string messageContent = $"Cortana, can you scheudle a Skype for business call between the people on the to line tomorrow {aExpertRequest.RequestedDayHalf.ToString().ToLower()}?" 
         +"\n" + $"The conversation will cover the following, {aExpertRequest.RequestedConversation}";
     Content content = new Content("text/plain", messageContent);
 
