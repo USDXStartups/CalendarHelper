@@ -19,6 +19,7 @@ static void LoadEmailConfiguration()
     BccEmailAddress = AppSettingsHelper.GetAppSetting("BCC_EMAIL");
     SchedulerEmailAddress = AppSettingsHelper.GetAppSetting("SCHEDULER_EMAIL");
     FromEmailAddress = AppSettingsHelper.GetAppSetting("FROM_EMAIL");
+
 }
 
 static void LoadTopicExperts()
