@@ -23,7 +23,7 @@ public static class AppSettingsHelper
             }
             else if(!String.IsNullOrEmpty(SettingValue))
             {
-                LogHelper.Info($"AppSetting {SettingName} was null of empty");
+                LogHelper.Info($"AppSetting {SettingName} was null or empty");
             }
 
         }
