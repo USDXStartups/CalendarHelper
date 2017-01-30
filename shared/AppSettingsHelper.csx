@@ -1,4 +1,5 @@
 #load "LogHelper.csx"
+#load "FunctionNameHelper.csx"
 
 using System.Configuration;
 
@@ -8,6 +9,7 @@ public static class AppSettingsHelper
     {
 
         string SettingValue = "";
+        string methodName = this.GetType().FullName;
 
         try
         {
@@ -15,25 +17,25 @@ public static class AppSettingsHelper
 
             if ((!String.IsNullOrEmpty(SettingValue)) && LogValue)
             {
-                LogHelper.Info($"Retreived AppSetting {SettingName} with a value of {SettingValue}");    
+                LogHelper.Info($"{FunctionnameHelper} {GetFunctionName()} {methodName} Retreived AppSetting {SettingName} with a value of {SettingValue}");    
             }
             else if((!String.IsNullOrEmpty(SettingValue)) && !LogValue)
             {
-                 LogHelper.Info($"Retreived AppSetting {SettingName} but logging value was turned off");  
+                 LogHelper.Info($"{FunctionnameHelper} {methodName} Retreived AppSetting {SettingName} but logging value was turned off");  
             }
             else if(!String.IsNullOrEmpty(SettingValue))
             {
-                LogHelper.Info($"AppSetting {SettingName} was null or empty");
+                LogHelper.Info($"{FunctionnameHelper} {methodName} AppSetting {SettingName} was null or empty");
             }
 
         }
         catch (ConfigurationErrorsException ex)
         {
-            LogHelper.Error($"Unable to find AppSetting {SettingName} with exception of {ex.Message}");
+            LogHelper.Error($"{FunctionnameHelper} {methodName} Unable to find AppSetting {SettingName} with exception of {ex.Message}");
         }
         catch (System.Exception ex)
         {
-            LogHelper.Error($"Looking for AppSetting {SettingName} caused an exception of {ex.Message}");
+            LogHelper.Error($"{FunctionnameHelper} {methodName} Looking for AppSetting {SettingName} caused an exception of {ex.Message}");
         }
 
         return SettingValue;
