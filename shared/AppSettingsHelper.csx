@@ -9,7 +9,7 @@ public static class AppSettingsHelper
     {
 
         string SettingValue = "";
-        string methodName = this.GetType().FullName;
+        string methodName = "GetAppSettin"; //GetType().FullName;
 
         try
         {
