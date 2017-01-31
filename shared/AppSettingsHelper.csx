@@ -17,7 +17,7 @@ public static class AppSettingsHelper
 
             if ((!String.IsNullOrEmpty(SettingValue)) && LogValue)
             {
-                LogHelper.Info($"{FunctionNameHelper.GetFunctionName()} {GetFunctionName()} {methodName} Retreived AppSetting {SettingName} with a value of {SettingValue}");    
+                LogHelper.Info($"{FunctionNameHelper.GetFunctionName()} {methodName} Retreived AppSetting {SettingName} with a value of {SettingValue}");    
             }
             else if((!String.IsNullOrEmpty(SettingValue)) && !LogValue)
             {
