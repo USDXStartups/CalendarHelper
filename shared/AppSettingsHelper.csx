@@ -17,25 +17,25 @@ public static class AppSettingsHelper
 
             if ((!String.IsNullOrEmpty(SettingValue)) && LogValue)
             {
-                LogHelper.Info($"{FunctionnameHelper.GetFunctionName()} {GetFunctionName()} {methodName} Retreived AppSetting {SettingName} with a value of {SettingValue}");    
+                LogHelper.Info($"{FunctionNameHelper.GetFunctionName()} {GetFunctionName()} {methodName} Retreived AppSetting {SettingName} with a value of {SettingValue}");    
             }
             else if((!String.IsNullOrEmpty(SettingValue)) && !LogValue)
             {
-                 LogHelper.Info($"{FunctionnameHelper.GetFunctionName()} {methodName} Retreived AppSetting {SettingName} but logging value was turned off");  
+                 LogHelper.Info($"{FunctionNameHelper.GetFunctionName()} {methodName} Retreived AppSetting {SettingName} but logging value was turned off");  
             }
             else if(!String.IsNullOrEmpty(SettingValue))
             {
-                LogHelper.Info($"{FunctionnameHelper.GetFunctionName()} {methodName} AppSetting {SettingName} was null or empty");
+                LogHelper.Info($"{FunctionNameHelper.GetFunctionName()} {methodName} AppSetting {SettingName} was null or empty");
             }
 
         }
         catch (ConfigurationErrorsException ex)
         {
-            LogHelper.Error($"{FunctionnameHelper.GetFunctionName()} {methodName} Unable to find AppSetting {SettingName} with exception of {ex.Message}");
+            LogHelper.Error($"{FunctionNameHelper.GetFunctionName()} {methodName} Unable to find AppSetting {SettingName} with exception of {ex.Message}");
         }
         catch (System.Exception ex)
         {
-            LogHelper.Error($"{FunctionnameHelper.GetFunctionName()} {methodName} Looking for AppSetting {SettingName} caused an exception of {ex.Message}");
+            LogHelper.Error($"{FunctionNameHelper.GetFunctionName()} {methodName} Looking for AppSetting {SettingName} caused an exception of {ex.Message}");
         }
 
         return SettingValue;
